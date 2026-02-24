@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /c/Workspace/glambot-new && bunx create-vite . --template react-ts 2>&1)",
+      "Bash(cd /c/Workspace/glambot-new && bun install 2>&1)",
+      "Bash(cd /c/Workspace/glambot-new && bun add react-router-dom && bun add -d tailwindcss @tailwindcss/vite 2>&1)",
+      "Bash(cd /c/Workspace/glambot-new && bun run build 2>&1)"
+    ]
+  }
+}

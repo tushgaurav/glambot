@@ -1,0 +1,75 @@
+import { forwardRef } from 'react';
+
+interface SpecsGridProps {
+  visible: boolean;
+}
+
+const specs = [
+  { id: 'SPEC_01', value: '6-AXIS', label: 'ROBOTIC ARM FREEDOM' },
+  { id: 'SPEC_02', value: '360°', label: 'COVERAGE ARC' },
+  { id: 'SPEC_03', value: '4K/60', label: 'CAPTURE RESOLUTION', accent: true },
+  { id: 'SPEC_04', value: '< 5 MIN', label: 'PROCESSING TIME' },
+];
+
+const SpecsGrid = forwardRef<HTMLElement, SpecsGridProps>(({ visible }, ref) => {
+  return (
+    <section
+      ref={ref}
+      className={`relative py-16 md:py-24 lg:py-32 ${visible ? 'section-visible' : 'section-hidden'}`}
+      style={{ backgroundColor: '#FAFAFA' }}
+    >
+      <div className="px-4 md:px-8 lg:px-16">
+        <h3
+          className="font-mono-ibm text-xs md:text-sm tracking-widest mb-12 md:mb-16 font-semibold"
+          style={{ letterSpacing: '0.3em', color: '#000000' }}
+        >
+          TECHNICAL SPECIFICATIONS
+        </h3>
+
+        <div className="relative">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative"
+            style={{ border: '3px solid #000000' }}
+          >
+            {specs.map((spec, i) => (
+              <div
+                key={spec.id}
+                className="p-6 md:p-8 relative"
+                style={{
+                  borderRight: i < 3 ? '3px solid #000000' : undefined,
+                  borderBottom: '3px solid #000000',
+                  ...(spec.accent ? { borderTop: '4px solid #FF4D00' } : {}),
+                }}
+              >
+                <span className="font-mono-ibm text-xs font-medium block mb-4" style={{ color: '#858585' }}>
+                  {spec.id}
+                </span>
+                <span className="font-anton text-4xl md:text-5xl lg:text-6xl block mb-2" style={{ color: '#000000' }}>
+                  {spec.value}
+                </span>
+                <span className="font-mono-ibm text-xs tracking-wider block" style={{ color: '#858585' }}>
+                  {spec.label}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          {/* Grid extension lines */}
+          <div className="hidden lg:flex justify-between" style={{ height: '24px' }}>
+            <div style={{ width: '3px', backgroundColor: '#000000', height: '100%' }} />
+            <div style={{ width: '3px', backgroundColor: '#000000', height: '100%', marginLeft: 'calc(25% - 3px)' }} />
+            <div style={{ width: '3px', backgroundColor: '#000000', height: '100%', marginLeft: 'auto', marginRight: 'calc(25% - 3px)' }} />
+            <div style={{ width: '3px', backgroundColor: '#000000', height: '100%' }} />
+          </div>
+        </div>
+
+        <div className="mt-6 font-mono-ibm text-xs" style={{ color: '#B0B0B0' }}>
+          [DATA:VERIFIED] [LAST_UPDATE: 2026.02]
+        </div>
+      </div>
+    </section>
+  );
+});
+
+SpecsGrid.displayName = 'SpecsGrid';
+export default SpecsGrid;
