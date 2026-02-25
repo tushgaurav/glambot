@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import GlobalStyles from './components/GlobalStyles';
 import Hero from './components/Hero';
 import Manifesto from './components/Manifesto';
 import SpecsGrid from './components/SpecsGrid';
@@ -76,10 +75,8 @@ export default function App() {
   }, []);
 
   return (
-    <>
-      <GlobalStyles />
-      <div className="min-h-screen" style={{ backgroundColor: '#FAFAFA', color: '#000000' }}>
-        <Hero heroRevealed={heroRevealed} statusText={statusText} />
+    <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: '#FAFAFA', color: '#000000' }}>
+        <Hero heroRevealed={heroRevealed} />
         <Manifesto ref={(el) => setSectionRef(el, 0)} visible={visibleSections.has(0)} />
         <SpecsGrid ref={(el) => setSectionRef(el, 1)} visible={visibleSections.has(1)} />
         <Process ref={(el) => setSectionRef(el, 2)} visible={visibleSections.has(2)} />
@@ -94,6 +91,5 @@ export default function App() {
         <CallToAction ref={(el) => setSectionRef(el, 4)} visible={visibleSections.has(4)} statusText={statusText} />
         <Footer />
       </div>
-    </>
   );
 }

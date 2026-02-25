@@ -56,6 +56,10 @@ export default function GlobalStyles() {
         border-color: #FF4D00 !important;
       }
 
+      .nav-link:hover {
+        color: #FF4D00 !important;
+      }
+
       .menu-box:hover {
         background-color: #000000;
         color: #FAFAFA;
@@ -68,6 +72,33 @@ export default function GlobalStyles() {
 
       .statement-snapped {
         transform: rotate(-3deg);
+      }
+
+      @keyframes marqueeScroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+      }
+
+      @keyframes marqueeScrollReverse {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0); }
+      }
+
+      .marquee-track-container {
+        width: 100%;
+      }
+
+      .marquee-track {
+        animation: marqueeScroll 30s linear infinite;
+      }
+
+      .marquee-track-reverse {
+        animation: marqueeScrollReverse 30s linear infinite;
+      }
+
+      .marquee-track:hover,
+      .marquee-track-reverse:hover {
+        animation-play-state: paused;
       }
 
       ::selection {
