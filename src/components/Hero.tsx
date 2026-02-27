@@ -5,6 +5,16 @@ const VIDEO_URLS = [
   'https://storage.googleapis.com/owlautomation/glambot/videos/lady1.MOV',
   'https://storage.googleapis.com/owlautomation/glambot/videos/girl2.MOV',
   'https://storage.googleapis.com/owlautomation/glambot/videos/girl1.MOV',
+  'https://storage.googleapis.com/owlautomation/glambot/videos/deb.MOV',
+  'https://storage.googleapis.com/owlautomation/glambot/videos/couple1.MOV',
+  'https://storage.googleapis.com/owlautomation/glambot/videos/IMG_2722%20(1).MOV',
+'https://storage.googleapis.com/owlautomation/glambot/videos/IMG_2686.MOV',
+'https://storage.googleapis.com/owlautomation/glambot/videos/IMG_2787.MOV',
+'https://storage.googleapis.com/owlautomation/glambot/videos/IMG_2786.MOV',
+'https://storage.googleapis.com/owlautomation/glambot/videos/IMG_2816.MOV',
+'https://storage.googleapis.com/owlautomation/glambot/videos/IMG_0135.MOV',
+'https://storage.googleapis.com/owlautomation/glambot/videos/IMG_2820.MOV',
+'https://storage.googleapis.com/owlautomation/glambot/videos/c732a66e-4c28-456b-a66c-1dc9f3ed2452.mp4'
 ];
 // ──────────────────────────────────────────────────────────────────────
 
@@ -13,12 +23,6 @@ function VideoCard({ src, index }: { src: string; index: number }) {
   const tag = `[CLIP_${String(index + 1).padStart(2, '0')}]`;
   return (
     <div className="flex-shrink-0" style={{ width: '160px' }}>
-      <span
-        className="font-mono-ibm block mb-1"
-        style={{ fontSize: '9px', color: '#858585', letterSpacing: '0.1em' }}
-      >
-        {tag}
-      </span>
       <div
         style={{
           border: '3px solid #000',
