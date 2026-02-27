@@ -20,7 +20,6 @@ const VIDEO_URLS = [
 
 function VideoCard({ src, index }: { src: string; index: number }) {
   const isAccent = index % 3 === 1;
-  const tag = `[CLIP_${String(index + 1).padStart(2, '0')}]`;
   return (
     <div className="flex-shrink-0" style={{ width: '160px' }}>
       <div
