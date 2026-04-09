@@ -73,10 +73,6 @@ const Process = forwardRef<HTMLElement, ProcessProps>(({ visible }, ref) => {
             </div>
           ))}
         </div>
-
-        <div className="mt-6 font-mono-ibm text-xs" style={{ color: '#B0B0B0' }}>
-          [CYCLE_TIME: ~180s] [MODE: AUTONOMOUS]
-        </div>
       </div>
     </section>
   );

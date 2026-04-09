@@ -11,10 +11,6 @@ const Manifesto = forwardRef<HTMLElement, ManifestoProps>(({ visible }, ref) => 
       className={`relative py-16 md:py-24 lg:py-32 ${visible ? 'section-visible' : 'section-hidden'}`}
       style={{ backgroundColor: '#000000', color: '#FAFAFA' }}
     >
-      <div className="absolute top-8 right-4 md:right-8 font-mono-ibm text-xs" style={{ color: '#858585' }}>
-        [47.6062°N, 122.3321°W]
-      </div>
-
       <div className="px-4 md:px-8 lg:px-16 max-w-5xl">
         <h2
           className="font-anton text-4xl md:text-6xl lg:text-8xl leading-none mb-8 md:mb-12"
@@ -39,13 +35,6 @@ const Manifesto = forwardRef<HTMLElement, ManifestoProps>(({ visible }, ref) => 
             the intersection of human expression and machine accuracy.
           </p>
         </div>
-      </div>
-
-      <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 font-mono-ibm text-xs" style={{ color: '#858585' }}>
-        SEC_02 // MANIFESTO
-      </div>
-      <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 font-mono-ibm text-xs" style={{ color: '#858585' }}>
-        [REF:001-A]
       </div>
     </section>
   );

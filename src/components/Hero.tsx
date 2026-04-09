@@ -123,13 +123,6 @@ export default function Hero({ heroRevealed }: HeroProps) {
         {row2.length > 0 && <MarqueeRow videos={row2} reverse />}
       </div>
 
-      {/* Bottom coordinate markers */}
-      <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 font-mono-ibm text-xs z-10" style={{ color: '#B0B0B0' }}>
-        [X:00 Y:00]
-      </div>
-      <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 font-mono-ibm text-xs z-10" style={{ color: '#B0B0B0' }}>
-        [X:FF Y:FF]
-      </div>
     </section>
   );
 }

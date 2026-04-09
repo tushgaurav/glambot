@@ -33,10 +33,6 @@ const Statement = forwardRef<HTMLElement, StatementProps>(({ visible, snapped },
           />
         </h2>
       </div>
-
-      <div className="absolute top-4 right-4 md:top-8 md:right-8 font-mono-ibm text-xs" style={{ color: '#B0B0B0' }}>
-        [ROT: -3.00°]
-      </div>
     </section>
   );
 });
