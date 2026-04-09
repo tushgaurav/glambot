@@ -26,11 +26,10 @@ const SpecsGrid = forwardRef<HTMLElement, SpecsGridProps>(({ visible }, ref) => 
           TECHNICAL SPECIFICATIONS
         </h3>
 
-        <div className="relative">
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative"
-            style={{ border: '3px solid #000000' }}
-          >
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative"
+          style={{ border: '3px solid #000000' }}
+        >
             {specs.map((spec, i) => (
               <div
                 key={spec.id}
@@ -52,19 +51,6 @@ const SpecsGrid = forwardRef<HTMLElement, SpecsGridProps>(({ visible }, ref) => 
                 </span>
               </div>
             ))}
-          </div>
-
-          {/* Grid extension lines */}
-          <div className="hidden lg:flex justify-between" style={{ height: '24px' }}>
-            <div style={{ width: '3px', backgroundColor: '#000000', height: '100%' }} />
-            <div style={{ width: '3px', backgroundColor: '#000000', height: '100%', marginLeft: 'calc(25% - 3px)' }} />
-            <div style={{ width: '3px', backgroundColor: '#000000', height: '100%', marginLeft: 'auto', marginRight: 'calc(25% - 3px)' }} />
-            <div style={{ width: '3px', backgroundColor: '#000000', height: '100%' }} />
-          </div>
-        </div>
-
-        <div className="mt-6 font-mono-ibm text-xs" style={{ color: '#B0B0B0' }}>
-          [DATA:VERIFIED] [LAST_UPDATE: 2026.02]
         </div>
       </div>
     </section>
