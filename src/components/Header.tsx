@@ -5,7 +5,7 @@ const NAV_LINKS = [
   { to: '/about', label: 'ABOUT' },
   { to: '/vision', label: 'VISION' },
   { to: '/gear', label: 'GEAR' },
-  { to: '/pricing', label: 'PRICING' },
+  // { to: '/pricing', label: 'PRICING' },
   { to: '/book', label: 'BOOK NOW' },
   { to: '/privacy', label: 'PRIVACY' },
 ];
