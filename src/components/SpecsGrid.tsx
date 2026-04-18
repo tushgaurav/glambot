@@ -5,10 +5,10 @@ interface SpecsGridProps {
 }
 
 const specs = [
-  { id: 'SPEC_01', value: '6-AXIS', label: 'ROBOTIC ARM FREEDOM' },
-  { id: 'SPEC_02', value: '360°', label: 'COVERAGE ARC' },
-  { id: 'SPEC_03', value: '4K/60', label: 'CAPTURE RESOLUTION', accent: true },
-  { id: 'SPEC_04', value: '< 5 MIN', label: 'PROCESSING TIME' },
+  { id: 'AXIS', value: '6 AXIS', label: 'ROBOTIC ARM FREEDOM' },
+  { id: 'RANGE', value: '280°', label: 'COVERAGE ARC' },
+  { id: 'VIDEO', value: '4K/240', label: 'CAPTURE RESOLUTION', accent: true },
+  { id: 'DELIVERY', value: '< 5 MIN', label: 'PROCESSING TIME' },
 ];
 
 const SpecsGrid = forwardRef<HTMLElement, SpecsGridProps>(({ visible }, ref) => {
