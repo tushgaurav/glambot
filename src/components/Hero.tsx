@@ -1,5 +1,4 @@
 import { useState, useRef, useCallback } from 'react';
-import Header from './Header';
 
 interface HeroProps {
   heroRevealed: boolean;
@@ -70,8 +69,6 @@ export default function Hero({ heroRevealed }: HeroProps) {
           background: 'linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 60%, transparent 100%)',
         }}
       />
-
-      <Header />
 
       <div className="absolute bottom-16 md:bottom-20 left-4 md:left-8 lg:left-16 z-10">
         <h1

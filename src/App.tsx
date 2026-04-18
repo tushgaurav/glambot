@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import Header from './components/Header';
 import Hero from './components/Hero';
 import Manifesto from './components/Manifesto';
 import SpecsGrid from './components/SpecsGrid';
@@ -76,6 +77,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen overflow-x-hidden" style={{ backgroundColor: '#FAFAFA', color: '#000000' }}>
+        <Header />
         <Hero heroRevealed={heroRevealed} />
         <Manifesto ref={(el) => setSectionRef(el, 0)} visible={visibleSections.has(0)} />
         <SpecsGrid ref={(el) => setSectionRef(el, 1)} visible={visibleSections.has(1)} />

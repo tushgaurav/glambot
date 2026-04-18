@@ -1,1 +1,22 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --color-background: #0a0a0a;
+  --color-foreground: #fafafa;
+  --color-border: rgba(250, 250, 250, 0.12);
+  --color-input: rgba(250, 250, 250, 0.12);
+  --color-ring: #ff4d00;
+  --color-muted: #141414;
+  --color-muted-foreground: rgba(250, 250, 250, 0.55);
+  --color-accent: rgba(255, 77, 0, 0.12);
+  --color-accent-foreground: #ff4d00;
+  --color-popover: #0a0a0a;
+  --color-popover-foreground: #fafafa;
+  --color-primary: #ff4d00;
+  --color-primary-foreground: #0a0a0a;
+  --color-secondary: #1a1a1a;
+  --color-secondary-foreground: #fafafa;
+  --color-destructive: #ff4d00;
+  --color-destructive-foreground: #0a0a0a;
+}
