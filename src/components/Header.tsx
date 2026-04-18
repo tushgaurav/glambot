@@ -17,7 +17,7 @@ export default function Header() {
     <div className="absolute top-0 left-0 right-0 z-20">
       <div className="flex justify-between items-center p-4 md:p-8">
         <Link to="/">
-          <img src="/orangewood-black.png" alt="Logo" className="h-8" />
+          <img src="/orangewood.png" alt="Logo" className="h-8" />
         </Link>
 
         {/* Desktop: inline nav links */}
@@ -28,7 +28,7 @@ export default function Header() {
               to={link.to}
               className="nav-link font-mono-ibm text-xs tracking-wider px-3 py-2"
               style={{
-                color: '#000',
+                color: '#FAFAFA',
                 textDecoration: 'none',
                 transition: 'color 0.1s',
               }}
@@ -42,9 +42,9 @@ export default function Header() {
         <button
           className="lg:hidden menu-box font-space text-sm font-semibold px-4 py-2 tracking-wider"
           style={{
-            border: '3px solid #000000',
-            backgroundColor: menuOpen ? '#000' : 'transparent',
-            color: menuOpen ? '#FAFAFA' : '#000000',
+            border: '3px solid #FAFAFA',
+            backgroundColor: menuOpen ? '#FAFAFA' : 'transparent',
+            color: menuOpen ? '#000000' : '#FAFAFA',
             cursor: 'pointer',
             transition: 'background-color 0.1s, color 0.1s',
           }}

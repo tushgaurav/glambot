@@ -74,33 +74,6 @@ export default function GlobalStyles() {
         transform: rotate(-3deg);
       }
 
-      @keyframes marqueeScroll {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-      }
-
-      @keyframes marqueeScrollReverse {
-        0% { transform: translateX(-50%); }
-        100% { transform: translateX(0); }
-      }
-
-      .marquee-track-container {
-        width: 100%;
-      }
-
-      .marquee-track {
-        animation: marqueeScroll 30s linear infinite;
-      }
-
-      .marquee-track-reverse {
-        animation: marqueeScrollReverse 30s linear infinite;
-      }
-
-      .marquee-track:hover,
-      .marquee-track-reverse:hover {
-        animation-play-state: paused;
-      }
-
       ::selection {
         background: #FF4D00;
         color: #000;
