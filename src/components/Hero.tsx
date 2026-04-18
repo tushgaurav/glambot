@@ -1,3 +1,4 @@
+import { useState, useRef, useCallback } from 'react';
 import Header from './Header';
 
 interface HeroProps {
@@ -5,10 +6,30 @@ interface HeroProps {
 }
 
 export default function Hero({ heroRevealed }: HeroProps) {
+  const [mouse, setMouse] = useState({ x: 0.5, y: 0.5, active: false });
+  const sectionRef = useRef<HTMLElement>(null);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent) => {
+    if (!sectionRef.current) return;
+    const rect = sectionRef.current.getBoundingClientRect();
+    setMouse({
+      x: (e.clientX - rect.left) / rect.width,
+      y: (e.clientY - rect.top) / rect.height,
+      active: true,
+    });
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setMouse(prev => ({ ...prev, active: false }));
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       className="relative w-full h-screen overflow-hidden"
       style={{ backgroundColor: '#0A0A0A' }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
       <video
         src="https://storage.googleapis.com/owlautomation/glambot/videos/Final.mp4"
@@ -17,7 +38,10 @@ export default function Hero({ heroRevealed }: HeroProps) {
         loop
         playsInline
         className="absolute inset-0 w-full h-full"
-        style={{ objectFit: 'cover', filter: 'saturate(1.3) contrast(1.2) brightness(0.85) hue-rotate(-5deg)' }}
+        style={{
+          objectFit: 'cover',
+          filter: 'saturate(1.3) contrast(1.2) brightness(0.85) hue-rotate(-5deg)',
+        }}
       />
 
       <div
@@ -27,6 +51,17 @@ export default function Hero({ heroRevealed }: HeroProps) {
             'linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 80%, rgba(0,0,0,0.85) 100%)',
         }}
       />
+
+      {mouse.active && (
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `radial-gradient(ellipse 60% 50% at ${mouse.x * 100}% ${mouse.y * 100}%, transparent 0%, rgba(0,0,0,0.5) 100%)`,
+            pointerEvents: 'none',
+            zIndex: 2,
+          }}
+        />
+      )}
 
       <div
         className="absolute top-0 left-0 right-0 z-10"
@@ -71,7 +106,7 @@ export default function Hero({ heroRevealed }: HeroProps) {
             className="font-mono-ibm text-xs md:text-sm tracking-widest"
             style={{ color: 'rgba(255,255,255,0.7)' }}
           >
-            ROBOTIC MOTION CAPTURE SYSTEM // ORANGEWOOD LABS // EST. 2024
+            NOT A CAMERA. NOT A GIMBAL. A FULL-SCALE ROBOTIC ARM ENGINEERED TO MAKE ORDINARY PEOPLE LOOK EXTRAORDINARY.
           </p>
         </div>
       </div>

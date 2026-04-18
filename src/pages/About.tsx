@@ -15,7 +15,7 @@ const TIMELINE = [
 
 export default function About() {
   return (
-    <PageLayout sectionId="SEC_ABOUT" sectionLabel="ABOUT">
+    <PageLayout sectionId="ABOUT" sectionLabel="ABOUT">
       {/* Manifesto block */}
       <div className="mb-16 md:mb-24">
         <div className="pl-4 md:pl-8" style={{ borderLeft: '4px solid #FF4D00' }}>
@@ -39,7 +39,7 @@ export default function About() {
           className="font-mono-ibm text-xs tracking-widest mb-8 font-semibold"
           style={{ letterSpacing: '0.3em', color: '#000' }}
         >
-          OPERATIONAL_UNITS
+          OPERATIONAL UNITS
         </h3>
         <div
           className="grid grid-cols-1 md:grid-cols-3"

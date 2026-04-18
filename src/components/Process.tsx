@@ -46,7 +46,7 @@ const Process = forwardRef<HTMLElement, ProcessProps>(({ visible }, ref) => {
           className="font-mono-ibm text-xs md:text-sm tracking-widest mb-12 md:mb-16 font-semibold"
           style={{ letterSpacing: '0.3em', color: '#000000' }}
         >
-          HOW_IT_WORKS
+          HOW IT WORKS
         </h3>
 
         <div className="flex flex-col gap-0">

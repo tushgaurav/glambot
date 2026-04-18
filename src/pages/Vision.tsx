@@ -25,7 +25,7 @@ const PRINCIPLES = [
 
 export default function Vision() {
   return (
-    <PageLayout sectionId="SEC_VISION" sectionLabel="VISION">
+    <PageLayout sectionId="VISION" sectionLabel="VISION">
       {/* Mission statement */}
       <div className="mb-16 md:mb-24">
         <div
@@ -33,7 +33,7 @@ export default function Vision() {
           style={{ backgroundColor: '#000', color: '#FAFAFA' }}
         >
           <span className="font-mono-ibm text-xs tracking-widest block mb-6" style={{ color: '#858585' }}>
-            MISSION_STATEMENT
+            MISSION STATEMENT
           </span>
           <h2 className="font-anton text-3xl md:text-5xl lg:text-6xl leading-none mb-6" style={{ color: '#FAFAFA' }}>
             BRING CINEMATIC ROBOTICS<br />
@@ -52,7 +52,7 @@ export default function Vision() {
       <div className="mb-16 md:mb-24">
         <div className="pl-4 md:pl-8" style={{ borderLeft: '4px solid #FF4D00' }}>
           <span className="font-mono-ibm text-xs tracking-widest block mb-4" style={{ color: '#858585', letterSpacing: '0.3em' }}>
-            VISION_STATEMENT
+            VISION STATEMENT
           </span>
           <p className="font-mono-ibm text-sm md:text-base leading-relaxed" style={{ color: '#000' }}>
             A future where robotic systems are a standard fixture at every major event —
@@ -70,7 +70,7 @@ export default function Vision() {
           className="font-mono-ibm text-xs tracking-widest mb-8 font-semibold"
           style={{ letterSpacing: '0.3em', color: '#000' }}
         >
-          CORE_PRINCIPLES
+          CORE PRINCIPLES
         </h3>
         <div
           className="grid grid-cols-1 md:grid-cols-2"

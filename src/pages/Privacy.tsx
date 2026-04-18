@@ -41,9 +41,9 @@ const SECTIONS = [
 
 export default function Privacy() {
   return (
-    <PageLayout sectionId="SEC_PRIVACY" sectionLabel="PRIVACY POLICY">
+    <PageLayout sectionId="PRIVACY" sectionLabel="PRIVACY POLICY">
       <div className="font-mono-ibm text-xs mb-8" style={{ color: '#858585' }}>
-        LAST_UPDATED: 2026.02.24 // VERSION: 1.2
+        LAST UPDATED: 2026.02.24 // VERSION: 1.2
       </div>
 
       <div className="flex flex-col gap-0">
@@ -72,7 +72,7 @@ export default function Privacy() {
       </div>
 
       <div className="mt-8 font-mono-ibm text-xs" style={{ color: '#B0B0B0' }}>
-        [DOC:LEGAL_PVY] [JURISDICTION:IN] [COMPLIANCE:IT_ACT_2000]
+        [DOC: LEGAL PVY] [JURISDICTION: IN] [COMPLIANCE: IT ACT 2000]
       </div>
     </PageLayout>
   );

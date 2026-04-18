@@ -36,7 +36,7 @@ export default function BookNow() {
   };
 
   return (
-    <PageLayout sectionId="SEC_BOOKING" sectionLabel="BOOK NOW">
+    <PageLayout sectionId="BOOKING" sectionLabel="BOOK NOW">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
         {/* Left: Form */}
         <form onSubmit={handleSubmit}>
@@ -44,7 +44,7 @@ export default function BookNow() {
             {/* Name */}
             <div className="p-4 md:p-6" style={{ borderBottom: '3px solid #000' }}>
               <label className="font-mono-ibm text-xs tracking-widest block mb-2 font-semibold" style={{ color: '#858585' }}>
-                FIELD_01 // NAME *
+                NAME *
               </label>
               <input
                 type="text"
@@ -60,7 +60,7 @@ export default function BookNow() {
             {/* Email */}
             <div className="p-4 md:p-6" style={{ borderBottom: '3px solid #000' }}>
               <label className="font-mono-ibm text-xs tracking-widest block mb-2 font-semibold" style={{ color: '#858585' }}>
-                FIELD_02 // EMAIL *
+                EMAIL *
               </label>
               <input
                 type="email"
@@ -76,7 +76,7 @@ export default function BookNow() {
             {/* Phone */}
             <div className="p-4 md:p-6" style={{ borderBottom: '3px solid #000' }}>
               <label className="font-mono-ibm text-xs tracking-widest block mb-2 font-semibold" style={{ color: '#858585' }}>
-                FIELD_03 // PHONE *
+                PHONE *
               </label>
               <input
                 type="tel"
@@ -92,7 +92,7 @@ export default function BookNow() {
             {/* Event Type */}
             <div className="p-4 md:p-6" style={{ borderBottom: '3px solid #000' }}>
               <label className="font-mono-ibm text-xs tracking-widest block mb-2 font-semibold" style={{ color: '#858585' }}>
-                FIELD_04 // EVENT TYPE *
+                EVENT TYPE *
               </label>
               <select
                 name="eventType"
@@ -112,7 +112,7 @@ export default function BookNow() {
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="p-4 md:p-6" style={{ borderBottom: '3px solid #000', borderRight: '3px solid #000' }}>
                 <label className="font-mono-ibm text-xs tracking-widest block mb-2 font-semibold" style={{ color: '#858585' }}>
-                  FIELD_05 // DATE *
+                  DATE *
                 </label>
                 <input
                   type="date"
@@ -125,7 +125,7 @@ export default function BookNow() {
               </div>
               <div className="p-4 md:p-6" style={{ borderBottom: '3px solid #000' }}>
                 <label className="font-mono-ibm text-xs tracking-widest block mb-2 font-semibold" style={{ color: '#858585' }}>
-                  FIELD_06 // VENUE
+                  VENUE
                 </label>
                 <input
                   type="text"
@@ -141,7 +141,7 @@ export default function BookNow() {
             {/* Guest count */}
             <div className="p-4 md:p-6" style={{ borderBottom: '3px solid #000' }}>
               <label className="font-mono-ibm text-xs tracking-widest block mb-2 font-semibold" style={{ color: '#858585' }}>
-                FIELD_07 // EST. GUEST COUNT
+                EST. GUEST COUNT
               </label>
               <input
                 type="number"
@@ -156,7 +156,7 @@ export default function BookNow() {
             {/* Message */}
             <div className="p-4 md:p-6">
               <label className="font-mono-ibm text-xs tracking-widest block mb-2 font-semibold" style={{ color: '#858585' }}>
-                FIELD_08 // ADDITIONAL NOTES
+                ADDITIONAL NOTES
               </label>
               <textarea
                 name="message"
@@ -186,7 +186,7 @@ export default function BookNow() {
         <div>
           <div className="mb-8 p-6 md:p-8" style={{ border: '3px solid #000', borderTop: '4px solid #FF4D00' }}>
             <span className="font-mono-ibm text-xs tracking-widest block mb-4" style={{ color: '#858585' }}>
-              BOOKING_INFO
+              BOOKING INFO
             </span>
             <p className="font-mono-ibm text-sm leading-relaxed" style={{ color: '#000' }}>
               Submit your event details and our team will get back to you within
@@ -200,7 +200,7 @@ export default function BookNow() {
 
           <div className="p-6 md:p-8" style={{ border: '3px solid #000' }}>
             <span className="font-mono-ibm text-xs tracking-widest block mb-4" style={{ color: '#858585' }}>
-              CONTACT_DIRECT
+              CONTACT DIRECT
             </span>
             <div className="flex flex-col gap-3">
               <div>

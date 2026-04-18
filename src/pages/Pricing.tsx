@@ -21,13 +21,13 @@ const ADDONS = [
 
 export default function Pricing() {
   return (
-    <PageLayout sectionId="SEC_PRICING" sectionLabel="PRICING">
+    <PageLayout sectionId="PRICING" sectionLabel="PRICING">
       {/* Main pricing card */}
       <div className="mb-16 md:mb-24">
         <div style={{ border: '3px solid #000' }}>
           <div className="p-8 md:p-12" style={{ borderBottom: '3px solid #000', borderTop: '4px solid #FF4D00' }}>
             <span className="font-mono-ibm text-xs tracking-widest block mb-2" style={{ color: '#858585' }}>
-              STANDARD_PACKAGE // PER EVENT
+              STANDARD PACKAGE // PER EVENT
             </span>
             <div className="flex items-baseline gap-2 mb-2">
               <span className="font-anton" style={{ fontSize: 'clamp(60px, 12vw, 140px)', color: '#000', lineHeight: 1 }}>

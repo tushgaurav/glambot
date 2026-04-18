@@ -54,7 +54,7 @@ const GEAR_LIST = [
 
 export default function Gear() {
   return (
-    <PageLayout sectionId="SEC_GEAR" sectionLabel="GEAR">
+    <PageLayout sectionId="GEAR" sectionLabel="GEAR">
       <div className="mb-8">
         <div className="pl-4 md:pl-8" style={{ borderLeft: '4px solid #FF4D00' }}>
           <p className="font-mono-ibm text-sm leading-relaxed" style={{ color: '#858585' }}>
@@ -66,7 +66,7 @@ export default function Gear() {
       </div>
 
       <div className="font-mono-ibm text-xs mb-8" style={{ color: '#858585' }}>
-        TOTAL_UNITS: {GEAR_LIST.length} // SYSTEM_WEIGHT: ~180KG // SETUP_TIME: 45MIN
+        TOTAL UNITS: {GEAR_LIST.length} // SYSTEM WEIGHT: ~180KG // SETUP TIME: 45MIN
       </div>
 
       {/* Gear grid */}
