@@ -122,7 +122,7 @@ export default function Header() {
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Button asChild variant="default">
+          <Button asChild variant="default" className="bg-white font-mono-ibm uppercase p-6 py-5">
             <Link to="/book">Book Now</Link>
           </Button>
         </div>
