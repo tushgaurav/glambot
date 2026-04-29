@@ -1,27 +1,66 @@
 import { useState } from 'react';
 import PageLayout from '../components/PageLayout';
 
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 const EVENT_TYPES = ['WEDDING', 'CORPORATE', 'BRAND ACTIVATION', 'PRIVATE PARTY', 'OTHER'];
 
+const initialFormData = {
+  name: '',
+  email: '',
+  phone: '',
+  eventType: '',
+  eventDate: '',
+  venue: '',
+  guestCount: '',
+  message: '',
+};
+
 export default function BookNow() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    eventType: '',
-    eventDate: '',
-    venue: '',
-    guestCount: '',
-    message: '',
-  });
+  const [formData, setFormData] = useState(initialFormData);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('BOOKING REQUEST SUBMITTED. We will contact you within 24 hours.');
+    setIsSubmitting(true);
+    setSubmitError(null);
+    setSubmitSuccess(false);
+
+    const payload: Record<string, unknown> = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      eventType: formData.eventType,
+      eventDate: formData.eventDate,
+    };
+    if (formData.venue) payload.venue = formData.venue;
+    if (formData.guestCount) payload.guestCount = Number(formData.guestCount);
+    if (formData.message) payload.message = formData.message;
+
+    try {
+      const res = await fetch(`${API_BASE}/bookings`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error?.message || 'Something went wrong');
+      }
+
+      setSubmitSuccess(true);
+      setFormData(initialFormData);
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : 'Network error. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const inputStyle: React.CSSProperties = {
@@ -171,15 +210,46 @@ export default function BookNow() {
 
           <button
             type="submit"
-            className="cta-button font-mono-ibm text-sm tracking-widest px-8 py-4 mt-6 cursor-pointer w-full md:w-auto"
+            disabled={isSubmitting}
+            className="cta-button font-mono-ibm text-sm tracking-widest px-8 py-4 mt-6 w-full md:w-auto"
             style={{
               border: '3px solid #000',
               backgroundColor: '#000',
               color: '#FAFAFA',
+              cursor: isSubmitting ? 'not-allowed' : 'pointer',
+              opacity: isSubmitting ? 0.6 : 1,
             }}
           >
-            SUBMIT BOOKING REQUEST →
+            {isSubmitting ? 'SUBMITTING...' : 'SUBMIT BOOKING REQUEST →'}
           </button>
+
+          {submitError && (
+            <div
+              className="font-mono-ibm text-sm p-4 mt-4"
+              style={{ border: '3px solid #FF4D00', color: '#FF4D00' }}
+            >
+              {submitError}
+            </div>
+          )}
+
+          {submitSuccess && (
+            <div
+              className="font-mono-ibm text-sm p-4 mt-4"
+              style={{ border: '3px solid #000' }}
+            >
+              <p className="font-semibold">BOOKING REQUEST SUBMITTED.</p>
+              <p className="mt-1" style={{ color: '#858585' }}>
+                We will contact you within 24 hours.
+              </p>
+              <button
+                type="button"
+                onClick={() => setSubmitSuccess(false)}
+                className="font-mono-ibm text-xs tracking-widest mt-3 underline cursor-pointer"
+              >
+                SUBMIT ANOTHER REQUEST
+              </button>
+            </div>
+          )}
         </form>
 
         {/* Right: Info panel */}
